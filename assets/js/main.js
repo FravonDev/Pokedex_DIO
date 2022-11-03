@@ -44,6 +44,11 @@ loadMoreButton.addEventListener('click', () => {
     }
 })
 
-function sendInfo(number){
-   console.log(pokeApi.fetchById(number))
+function sendInfo(element){
+    pokeName = element.querySelector('.name').innerText
+    console.log(pokeName);
+
+   let a = pokeApi.getPokemons(pokeName)
+   console.log(a.prototype.name);
+
 }

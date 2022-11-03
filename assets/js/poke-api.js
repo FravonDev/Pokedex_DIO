@@ -32,15 +32,3 @@ pokeApi.getPokemons = (offset = 0, limit = 5) => {
         .then((detailRequests) => Promise.all(detailRequests))
         .then((pokemonsDetails) => pokemonsDetails)
 }
-pokeApi.fetchById = async (number) => {
-    const pokemonId = number.querySelector('.number').innerText.replace('#', '');
-    console.log(pokemonId)
-    let pokemon;
-
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
-	const person = await response.json()	
-	return person.name
-    
-}
-
- 
