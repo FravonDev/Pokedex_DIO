@@ -21,6 +21,37 @@ function convertPokemonToLi(pokemon) {
     `
 }
 
+
+async function sendInfo(element){
+    pokeId = element.querySelector('.number').innerText.replace('#','')
+    console.log(pokeId);
+    pokemon = await pokeApi.getPokemon(pokeId)
+    console.log('front',pokemon);
+    detailedPokemonModal(pokemon)
+}
+
+function detailedPokemonModal(pokemon){
+    document.querySelector('.content').insertAdjacentHTML(`afterbegin`, 
+    `<div id="pokemonDetails" class="modal" onclick="(this.remove())">
+    <div id="modal" class="invisible modal">
+    <div class="modalBox">
+      <a href="#"  class="close" tabindex="0" role="button">close</a>
+
+      <h1>${pokemon.name}</h1>
+      <ol class="types">
+      ${pokemon.types.map((type) => `<li class="type ${type.type.name}">${type.type.name}</li>`).join('')}
+  </ol>
+      
+      <p>Digite uma tarefa clicando no campo "add task" :)
+      ps. Clique em qualquer lugar para fechar esta janela.
+
+      </p>
+    </div>
+  </div>
+     </div>`);
+
+}
+
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
         const newHtml = pokemons.map(convertPokemonToLi).join('')
@@ -43,12 +74,3 @@ loadMoreButton.addEventListener('click', () => {
         loadPokemonItens(offset, limit)
     }
 })
-
-function sendInfo(element){
-    pokeName = element.querySelector('.name').innerText
-    console.log(pokeName);
-
-   let a = pokeApi.getPokemons(pokeName)
-   console.log(a.prototype.name);
-
-}
