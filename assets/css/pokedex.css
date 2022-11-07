@@ -105,13 +105,13 @@
     justify-content: space-between;
 }
 
-.detail .types {
+ .types {
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-.detail .types .type {
+.types .type {
     color: #fff;
     padding: .25rem .5rem;
     margin: .25rem 0;
@@ -154,15 +154,50 @@
     border: 1px solid rgba(31, 31, 31, 0.4);
     height: 100%;
     max-height: 900px;
+    background-image: url('/assets/img/pokeball.svg');
+    background-repeat: no-repeat;
+    background-size: 35% auto;
+    background-position: right 160px top 200px;
 }
 /* styles hidden text */
 .panel {
     display: none;
     width: 100%;
     height: 100%;
+    
  }
  .headerDetails{
-    height: 20%;
+    padding:5rem 2.6rem 2.6rem 2.6rem;
+    width: 100%;
+    
+ }
+ .headerDetails .types{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: .4rem;
+ }
+ .headerDetails .type{
+    font-size: 1.2rem;
+    height: 100%;
+    text-transform: capitalize;
+    width: fit-content;
+ }
+ .detailsText{
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-transform: capitalize;
+ }
+ .detailsText .number{
+    color: #fff;
+    font-size: 1.5rem;
+    align-self: flex-end;
+    opacity: 1;
+
  }
  .dataDetails{
     width: 100%;
@@ -171,6 +206,7 @@
     border-radius:5rem  5rem 0 0;
     padding: 4rem 2rem;
  }
+
  .modalBox img{
     position: relative;
     top: 40px;

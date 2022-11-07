@@ -39,15 +39,20 @@ function detailedPokemonModal(pokemon) {
     <div class="modalBox ${pokemon.types[0].type.name}"">
       <a href="#" onclick="(this.parentNode.parentNode.remove())"  class="close" tabindex="0" role="button">close</a>
        <div class="headerDetails">
-       <span class="number">#${pokemon.id}</span>
-       <span class="name">${pokemon.name}</span>
-     <ol class="types">
-     ${pokemon.types
-       .map(
-         (type) => `<li class="type ${type.type.name}">${type.type.name}</li>`
-       )
-       .join("")}
- </ol>
+        <div class="detailsText">
+            <span class="name">${pokemon.name}</span>
+            <span class="number">#${pokemon.id}</span>
+        </div>
+
+      <div>
+      <ol class="types">
+      ${pokemon.types
+        .map(
+          (type) => `<li class="type ${type.type.name}">${type.type.name}</li>`
+        )
+        .join("")}
+  </ol>
+      </div>
  </div>
   <img src="${pokemon.sprites.other.dream_world.front_default}"
   alt="${pokemon.name}">
