@@ -67,10 +67,15 @@ function detailedPokemonModal(pokemon) {
 
       <div class="panel show" id="about">
         <div class="items">
-          <p>Species ${pokemon.species.name} </p>
-          <p>Heigth ${pokemon.height * 10} cm</p>
-          <p>weight ${pokemon.weight} KG</p>
-
+        <div class="groupItems">
+          <p>Species</p><p>${pokemon.species.name} </p>
+        </div>
+        <div class="groupItems">
+          <p>Heigth</p><p> ${pokemon.height * 10} cm </p>
+        </div>
+        <div class="groupItems">
+        <p>weight</p><p>${pokemon.weight} KG</p>
+        </div>
           <p>Abilities ${pokemon.abilities
             .map((ability) => ability.ability.name)
             .join(", ")}
@@ -79,9 +84,9 @@ function detailedPokemonModal(pokemon) {
       
         </div>
         
-      <div class="panel" id="stats"><p>base stats...</p></div>
-      <div class="panel" id="evolution"><p>evolution...</p></div>
-      <div class="panel" id="moves"><p>moves...</p></div>
+      <div class="panel" id="stats"><p>base stats (em breve...)</p></div>
+      <div class="panel" id="evolution"><p>evolution (em breve...) </p></div>
+      <div class="panel" id="moves"><p>moves (em breve...)</p></div>
       </div>
 
 

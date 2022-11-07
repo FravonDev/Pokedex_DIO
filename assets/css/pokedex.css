@@ -158,6 +158,7 @@
     background-repeat: no-repeat;
     background-size: 35% auto;
     background-position: right 160px top 200px;
+    
 }
 /* styles hidden text */
 .panel {
@@ -215,9 +216,40 @@
     height: auto;
 
  }
+ .dataDetails .buttons{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid gray;
+
+ }
+ 
  .dataDetails button{
-    border: 0;
     background-color: transparent;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    transition: .3s ease;
+    padding: 10px;
+ }
+ .dataDetails button:hover{
+    background-color: rgba(103, 143, 238, 0.2);
+    border-radius: 10px;
+
+ }
+ .groupItems{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+ }
+ .groupItems p:nth-child(1){
+    color: gray;
+  
  }
 .show { display: block; }
 .button { text-transform: uppercase; }
