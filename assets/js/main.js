@@ -76,10 +76,14 @@ function detailedPokemonModal(pokemon) {
         <div class="groupItems">
         <p>weight</p><p>${pokemon.weight} KG</p>
         </div>
-          <p>Abilities ${pokemon.abilities
+
+        <div class="groupItems">
+        <p>Abilities </p><p>${pokemon.abilities
             .map((ability) => ability.ability.name)
             .join(", ")}
             </p>
+        </div>
+         
       </div>
       
         </div>
