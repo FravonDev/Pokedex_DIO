@@ -34,22 +34,25 @@ async function sendInfo(element) {
 function detailedPokemonModal(pokemon) {
   document.querySelector(".content").insertAdjacentHTML(
     `afterbegin`,
-    `<div id="pokemonDetails" class="modal">
+    `<div id="pokemonDetails" class="modal >
     <div id="modal" class="invisible modal">
-    <div class="modalBox">
-      <a href="#" onclick="(this.parentNode.parentNode.parentNode.remove())"  class="close" tabindex="0" role="button">close</a>
-        <span class="number">#${pokemon.id}</span>
-        <span class="name">${pokemon.name}</span>
-      <ol class="types">
-      ${pokemon.types
-        .map(
-          (type) => `<li class="type ${type.type.name}">${type.type.name}</li>`
-        )
-        .join("")}
-  </ol>
+    <div class="modalBox ${pokemon.types[0].type.name}"">
+      <a href="#" onclick="(this.parentNode.parentNode.remove())"  class="close" tabindex="0" role="button">close</a>
+       <div class="headerDetails">
+       <span class="number">#${pokemon.id}</span>
+       <span class="name">${pokemon.name}</span>
+     <ol class="types">
+     ${pokemon.types
+       .map(
+         (type) => `<li class="type ${type.type.name}">${type.type.name}</li>`
+       )
+       .join("")}
+ </ol>
+ </div>
   <img src="${pokemon.sprites.other.dream_world.front_default}"
   alt="${pokemon.name}">
 
+      <div class="dataDetails">
       <div class="buttons">
         <button data-id="about" class="button" onclick="changeContent()">About</button>
         <button data-id="stats" class="button" onclick="changeContent()">Base Stats </button>
@@ -60,20 +63,22 @@ function detailedPokemonModal(pokemon) {
       <div class="panel show" id="about">
         <div class="items">
           <p>Species ${pokemon.species.name} </p>
-          <p>Heigth ${pokemon.height*10} cm</p>
+          <p>Heigth ${pokemon.height * 10} cm</p>
           <p>weight ${pokemon.weight} KG</p>
 
-          <p>Abilities ${
-            pokemon.abilities
+          <p>Abilities ${pokemon.abilities
             .map((ability) => ability.ability.name)
             .join(", ")}
             </p>
-        </div>
       </div>
-
+      
+        </div>
+        
       <div class="panel" id="stats"><p>base stats...</p></div>
       <div class="panel" id="evolution"><p>evolution...</p></div>
       <div class="panel" id="moves"><p>moves...</p></div>
+      </div>
+
 
     </div>
   </div>
@@ -81,23 +86,22 @@ function detailedPokemonModal(pokemon) {
   );
 }
 
-function changeContent(){
-  console.log(typeof pokemon.abilities.name)
-   const buttons = document.querySelector('.buttons');
-   const panels = document.querySelectorAll('.panel');
+function changeContent() {
+  console.log(typeof pokemon.abilities.name);
+  const buttons = document.querySelector(".buttons");
+  const panels = document.querySelectorAll(".panel");
 
-   buttons.addEventListener('click', handleClick);
+  buttons.addEventListener("click", handleClick);
 
-   function handleClick(e) {
-   
-   if (e.target.matches('button')) {
-       panels.forEach(panel => panel.classList.remove('show'));
+  function handleClick(e) {
+    if (e.target.matches("button")) {
+      panels.forEach((panel) => panel.classList.remove("show"));
 
-       const { id } = e.target.dataset;
-       const selector = `.panel[id="${id}"]`;
+      const { id } = e.target.dataset;
+      const selector = `.panel[id="${id}"]`;
 
-       document.querySelector(selector).classList.add('show');
-   }
+      document.querySelector(selector).classList.add("show");
+    }
   }
 }
 

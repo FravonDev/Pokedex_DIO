@@ -3,7 +3,6 @@
     grid-template-columns: 1fr;
     margin: 0;
     padding: 0;
-    list-style: none;
 }
 
 .normal {
@@ -127,7 +126,6 @@
     height: 70px;
 }
 .modal{
-
     display: none;
     position: fixed;
     display: flex;
@@ -135,29 +133,56 @@
     justify-content: center;
     z-index: 1;
     top: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     min-width: 100%;
     height: 100%;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(15px);
 
 }
-.modalBox{  
+.modalBox{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    background-color: #FFF2E7;
-    padding: 4rem;
-    max-width: 80%;
-    background: rgba(255, 255, 255);
+    /* padding: 4rem; */
+    width: 98vw;
+    max-width: 900px;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(31, 31, 31, 0.4);
+    height: 100%;
+    max-height: 900px;
 }
 /* styles hidden text */
-.panel { display: none; }
+.panel {
+    display: none;
+    width: 100%;
+    height: 100%;
+ }
+ .headerDetails{
+    height: 20%;
+ }
+ .dataDetails{
+    width: 100%;
+    height: 80%;
+    background-color: #fff;
+    border-radius:5rem  5rem 0 0;
+    padding: 4rem 2rem;
+ }
+ .modalBox img{
+    position: relative;
+    top: 40px;
+    width: 250px;
+    max-width: 40vw;
+    height: auto;
+
+ }
+ .dataDetails button{
+    border: 0;
+    background-color: transparent;
+ }
 .show { display: block; }
 .button { text-transform: uppercase; }
 .button:hover { cursor: pointer; background-color: #fffff0;}
