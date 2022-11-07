@@ -239,6 +239,9 @@
     border-radius: 10px;
 
  }
+ .items{
+    padding-top: 1rem;
+ }
  .groupItems{
     display: flex;
     flex-direction: row;
@@ -246,10 +249,10 @@
     gap: 10rem;
     font-size: 1.1rem;
     font-weight: 500;
+    width: 100px;
  }
  .groupItems p:nth-child(1){
     color: gray;
-  
  }
 .show { display: block; }
 .button { text-transform: uppercase; }
